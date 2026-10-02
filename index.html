@@ -6,109 +6,130 @@
     <title>Hiren Patel | Principal BI & Analytics Architect</title>
     <meta
       name="description"
-      content="Principal BI & Analytics Architect helping enterprises build trusted semantic layers, governance, and AI-ready analytics foundations."
+      content="Principal BI & Analytics Architect building trusted semantic layers, governance, and AI-ready analytics foundations."
     />
     <style>
       :root {
-        --bg: #f4f7f8;
-        --surface: #ffffff;
-        --surface-alt: #edf3f5;
-        --ink: #12212b;
-        --muted: #586d7a;
-        --line: #d9e3e8;
-        --accent: #0a6f75;
-        --accent-strong: #084f56;
-        --highlight: #e8a93a;
-        --shadow: rgba(11, 37, 44, 0.08);
+        --bg: #f7f5f1;
+        --panel: rgba(255, 255, 255, 0.72);
+        --panel-strong: #ffffff;
+        --ink: #171a1d;
+        --muted: #58636a;
+        --line: rgba(23, 26, 29, 0.1);
+        --accent: #1b2a39;
+        --accent-soft: #e7ecf1;
+        --highlight: #c9a86a;
+        --shadow: 0 24px 60px rgba(17, 23, 29, 0.10);
       }
 
       * { box-sizing: border-box; }
-
       html { scroll-behavior: smooth; }
       body {
         margin: 0;
-        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-        background: var(--bg);
+        background:
+          linear-gradient(180deg, rgba(255,255,255,0.22), rgba(255,255,255,0.04)),
+          var(--bg);
         color: var(--ink);
-        line-height: 1.6;
+        font-family: Inter, "Segoe UI", sans-serif;
+        line-height: 1.5;
       }
 
       a {
-        color: var(--accent);
+        color: var(--ink);
         text-decoration: none;
       }
 
       a:hover { text-decoration: underline; }
 
       .container {
-        width: min(1100px, calc(100% - 32px));
+        width: min(1180px, calc(100% - 40px));
         margin: 0 auto;
       }
 
-      nav {
+      .topbar {
         display: flex;
-        justify-content: space-between;
         align-items: center;
-        padding: 24px 0 12px;
+        justify-content: space-between;
         gap: 16px;
+        padding: 22px 0 10px;
       }
 
       .brand {
-        font-size: 1.2rem;
-        font-weight: 800;
-        letter-spacing: -0.03em;
+        font-size: 1.05rem;
+        font-weight: 700;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
       }
 
-      .nav-links {
+      .nav {
         display: flex;
-        flex-wrap: wrap;
-        gap: 20px;
-        font-size: 0.96rem;
+        align-items: center;
+        gap: 24px;
+        font-size: 0.88rem;
+        letter-spacing: 0.02em;
+        color: var(--muted);
       }
 
-      .nav-links a {
-        color: var(--ink);
+      .nav a {
+        color: var(--muted);
       }
+
+      .nav a:hover { color: var(--ink); }
 
       .hero {
-        padding: 48px 0 28px;
         display: grid;
-        grid-template-columns: 1.3fr 0.9fr;
-        gap: 32px;
+        grid-template-columns: 1.05fr 0.95fr;
         align-items: center;
+        gap: 52px;
+        padding: 52px 0 26px;
       }
 
       .eyebrow {
         display: inline-flex;
         align-items: center;
         gap: 8px;
-        background: var(--surface);
-        border: 1px solid var(--line);
         padding: 8px 12px;
+        border: 1px solid var(--line);
         border-radius: 999px;
-        color: var(--muted);
-        font-size: 0.83rem;
+        font-size: 0.77rem;
         font-weight: 600;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+        color: var(--muted);
+        background: rgba(255,255,255,0.45);
+        backdrop-filter: blur(6px);
+      }
+
+      .eyebrow::before {
+        content: "";
+        width: 8px;
+        height: 8px;
+        background: var(--highlight);
+        border-radius: 50%;
+        display: inline-block;
       }
 
       h1 {
-        margin: 18px 0 16px;
-        font-size: clamp(2.6rem, 6vw, 4.5rem);
-        line-height: 1;
-        letter-spacing: -0.05em;
+        margin: 18px 0 18px;
+        font-size: clamp(3rem, 7vw, 6rem);
+        line-height: 0.96;
+        letter-spacing: -0.065em;
+        font-weight: 700;
       }
 
       .lead {
-        margin: 0 0 26px;
-        max-width: 38rem;
-        font-size: 1.15rem;
+        max-width: 34rem;
+        margin: 0;
+        font-size: 1.12rem;
+        line-height: 1.7;
         color: var(--muted);
       }
 
-      .button-row {
+      .cta-row {
         display: flex;
         flex-wrap: wrap;
         gap: 12px;
+        margin-top: 28px;
       }
 
       .btn {
@@ -116,108 +137,122 @@
         align-items: center;
         justify-content: center;
         min-height: 46px;
-        padding: 0 22px;
-        border-radius: 8px;
-        font-weight: 700;
+        padding: 0 18px;
+        border-radius: 999px;
+        border: 1px solid var(--ink);
+        font-weight: 600;
         transition: transform 0.15s ease, box-shadow 0.15s ease;
       }
 
-      .btn:hover { text-decoration: none; transform: translateY(-1px); }
+      .btn:hover {
+        transform: translateY(-1px);
+        text-decoration: none;
+      }
 
       .btn.primary {
-        background: var(--accent);
+        background: var(--ink);
         color: white;
-        box-shadow: 0 10px 22px rgba(10, 111, 117, 0.24);
+        box-shadow: 0 18px 30px rgba(23, 26, 29, 0.12);
       }
 
       .btn.secondary {
-        background: transparent;
-        color: var(--accent);
-        border: 2px solid var(--accent);
+        background: rgba(255,255,255,0.5);
+        color: var(--ink);
       }
 
-      .portrait {
+      .portrait-wrap {
         position: relative;
-        display: grid;
-        place-items: center;
-        min-height: 420px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
       }
 
-      .portrait-card {
+      .photo-frame {
         position: relative;
-        width: min(100%, 420px);
-        aspect-ratio: 1 / 1.08;
-        border-radius: 18px;
+        width: min(100%, 560px);
+        aspect-ratio: 0.88;
+        border-radius: 34px;
         overflow: hidden;
-        background: linear-gradient(135deg, #dfeaec, #aabece);
-        border: 1px solid var(--line);
-        box-shadow: 0 26px 48px var(--shadow);
+        border: 1px solid rgba(23, 26, 29, 0.08);
+        box-shadow: var(--shadow);
+        background:
+          linear-gradient(180deg, rgba(255,255,255,0.14), rgba(0,0,0,0.06)),
+          radial-gradient(circle at 50% 20%, rgba(255,255,255,0.9), rgba(174, 188, 195, 0.75) 28%, rgba(80, 96, 108, 0.9) 100%);
       }
 
-      .portrait-card::before {
+      .photo-frame::before {
         content: "";
-        position: absolute;
-        inset: 14px -14px -14px 14px;
-        border: 2px solid var(--highlight);
-        border-radius: 18px;
-        z-index: 0;
-      }
-
-      .portrait-card .image {
         position: absolute;
         inset: 0;
         background:
-          linear-gradient(135deg, rgba(17, 33, 43, 0.12), rgba(17, 33, 43, 0.04)),
-          radial-gradient(circle at top, #cfe1e8 0%, #a9b9c4 40%, #617a89 100%);
+          radial-gradient(circle at 48% 34%, rgba(17,17,17,0.18), transparent 20%),
+          linear-gradient(180deg, rgba(19,25,31,0.08), rgba(19,25,31,0.23));
       }
 
-      .profile-badge {
+      .photo-frame::after {
+        content: "";
+        position: absolute;
+        inset: 26px 24px 24px 24px;
+        border-radius: 28px;
+        background:
+          linear-gradient(180deg, rgba(255,255,255,0.18), rgba(255,255,255,0.02)),
+          radial-gradient(circle at 50% 18%, rgba(255,255,255,0.8), rgba(173, 183, 190, 0.54) 20%, rgba(84, 95, 108, 0.38) 52%, rgba(30, 39, 49, 0.55) 100%);
+        filter: blur(1px);
+      }
+
+      .portrait-label {
         position: absolute;
         left: 22px;
-        bottom: 22px;
-        background: rgba(255, 255, 255, 0.9);
-        color: var(--ink);
-        border: 1px solid var(--line);
-        border-radius: 12px;
-        padding: 12px 14px;
-        backdrop-filter: blur(6px);
-        box-shadow: 0 10px 25px rgba(9, 25, 34, 0.08);
+        bottom: 20px;
+        z-index: 1;
+        display: inline-flex;
+        align-items: center;
+        gap: 10px;
+        padding: 10px 14px;
+        border-radius: 14px;
+        background: rgba(255,255,255,0.68);
+        border: 1px solid rgba(20, 26, 31, 0.08);
+        backdrop-filter: blur(8px);
       }
 
-      .profile-badge strong {
+      .portrait-label strong {
         display: block;
-        font-size: 1rem;
+        font-size: 0.84rem;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        color: var(--muted);
       }
 
-      .profile-badge span {
-        color: var(--muted);
-        font-size: 0.82rem;
+      .portrait-label span {
+        color: var(--ink);
+        font-size: 0.98rem;
+        font-weight: 600;
       }
 
       .stats {
         display: grid;
-        grid-template-columns: repeat(4, minmax(140px, 1fr));
-        gap: 10px;
-        margin-top: 10px;
-        border-top: 2px solid var(--ink);
-        border-bottom: 1px solid var(--line);
+        grid-template-columns: repeat(4, minmax(120px, 1fr));
+        gap: 12px;
+        padding: 22px 0 10px;
+        border-top: 1px solid var(--line);
       }
 
       .stat {
-        padding: 22px 16px 18px 0;
+        padding: 8px 0;
       }
 
       .stat strong {
         display: block;
-        font-size: clamp(1.8rem, 3vw, 2.7rem);
+        font-size: clamp(1.7rem, 2vw, 2.4rem);
         line-height: 1.1;
-        letter-spacing: -0.04em;
-        color: var(--accent);
+        letter-spacing: -0.06em;
       }
 
       .stat span {
+        display: block;
+        margin-top: 4px;
         color: var(--muted);
-        font-size: 0.92rem;
+        font-size: 0.8rem;
       }
 
       section {
@@ -225,144 +260,131 @@
       }
 
       .section-head {
-        margin-bottom: 26px;
+        margin-bottom: 24px;
       }
 
       h2 {
-        margin: 0 0 10px;
-        font-size: clamp(2rem, 4vw, 2.8rem);
-        line-height: 1.1;
-        letter-spacing: -0.04em;
+        margin: 0 0 8px;
+        font-size: clamp(2.2rem, 4vw, 3.2rem);
+        line-height: 1.02;
+        letter-spacing: -0.06em;
       }
 
-      .subhead {
+      .section-head p {
         margin: 0;
         max-width: 42rem;
         color: var(--muted);
+        font-size: 1.04rem;
       }
 
-      .approach-grid {
+      .principles {
         display: grid;
-        grid-template-columns: 0.95fr 1.15fr;
-        gap: 34px;
+        grid-template-columns: 1fr 1.1fr;
+        gap: 28px;
         align-items: start;
       }
 
       .stack-list {
-        display: flex;
-        flex-direction: column;
-        gap: 10px;
+        display: grid;
+        gap: 12px;
       }
 
       .stack-item {
-        background: var(--surface);
+        display: block;
+        padding: 18px 20px;
+        border-radius: 18px;
+        background: rgba(255,255,255,0.5);
         border: 1px solid var(--line);
-        border-left: 6px solid var(--accent);
-        border-radius: 10px;
-        padding: 16px 18px;
-        box-shadow: 0 8px 18px rgba(15, 33, 41, 0.03);
       }
-
-      .stack-item.ai { border-left-color: var(--highlight); }
 
       .stack-item strong {
         display: block;
+        margin-bottom: 6px;
         font-size: 1.02rem;
-        margin-bottom: 4px;
       }
 
       .stack-item small {
         color: var(--muted);
       }
 
-      .approach-copy p {
-        margin-top: 0;
-        color: var(--muted);
+      .principles-copy {
+        padding: 20px 0 0;
       }
 
-      .work-grid {
+      .principles-copy p {
+        margin: 0 0 16px;
+        color: var(--muted);
+        font-size: 1.05rem;
+      }
+
+      .feature-grid {
         display: grid;
-        grid-template-columns: repeat(2, minmax(260px, 1fr));
+        grid-template-columns: repeat(3, minmax(200px, 1fr));
         gap: 18px;
       }
 
-      .case {
-        background: var(--surface);
+      .feature {
+        padding: 20px 20px 18px;
+        border-radius: 20px;
+        background: rgba(255,255,255,0.55);
         border: 1px solid var(--line);
-        border-radius: 14px;
-        padding: 26px;
-        box-shadow: 0 12px 28px rgba(11, 35, 40, 0.04);
+        box-shadow: 0 14px 30px rgba(22, 28, 33, 0.03);
       }
 
-      .case-header {
-        display: grid;
-        grid-template-columns: 116px 1fr;
-        gap: 18px;
-        align-items: center;
-      }
-
-      .metric {
-        font-weight: 900;
-        font-size: clamp(2.2rem, 4vw, 3rem);
-        letter-spacing: -0.05em;
-        color: var(--accent);
-        line-height: 1;
-      }
-
-      .metric small {
-        display: block;
-        margin-top: 8px;
-        font-size: 0.74rem;
-        letter-spacing: 0;
+      .feature .n {
+        display: inline-block;
+        margin-bottom: 16px;
+        font-size: 0.71rem;
+        font-weight: 700;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
         color: var(--muted);
-        font-weight: 600;
       }
 
-      .case h3 {
+      .feature h3 {
+        margin: 0 0 8px;
+        font-size: 1.18rem;
+        letter-spacing: -0.04em;
+      }
+
+      .feature p {
         margin: 0;
-        font-size: 1.12rem;
-      }
-
-      .case p {
-        margin: 14px 0 0;
         color: var(--muted);
       }
 
       .timeline {
-        position: relative;
-        margin-top: 32px;
-        padding-left: 24px;
-        border-left: 3px solid var(--line);
+        border-left: 1px solid var(--line);
+        padding-left: 20px;
       }
 
       .job {
         position: relative;
-        padding: 0 0 28px 22px;
+        padding: 0 0 24px 18px;
       }
-
-      .job:last-child { padding-bottom: 0; }
 
       .job::before {
         content: "";
         position: absolute;
-        left: -32px;
-        top: 8px;
-        width: 15px;
-        height: 15px;
+        left: -27px;
+        top: 4px;
+        width: 12px;
+        height: 12px;
         border-radius: 50%;
-        background: var(--accent);
-        border: 3px solid var(--bg);
+        background: var(--ink);
       }
 
+      .job:last-child { padding-bottom: 0; }
+
       .job h3 {
-        margin: 0 0 4px;
-        font-size: 1.2rem;
+        margin: 0 0 6px;
+        font-size: 1.12rem;
+        letter-spacing: -0.04em;
       }
 
       .when {
         color: var(--muted);
-        font-size: 0.9rem;
         margin-bottom: 8px;
+        font-size: 0.86rem;
       }
 
       .job p {
@@ -370,21 +392,21 @@
         color: var(--muted);
       }
 
-      .tools {
+      .stack-grid {
         display: grid;
         grid-template-columns: repeat(2, minmax(220px, 1fr));
         gap: 18px 26px;
       }
 
       .tool {
-        padding-bottom: 16px;
+        padding-bottom: 18px;
         border-bottom: 1px solid var(--line);
       }
 
       .tool strong {
         display: block;
-        margin-bottom: 6px;
-        font-size: 1.05rem;
+        margin-bottom: 8px;
+        font-size: 1.04rem;
       }
 
       .tool span {
@@ -392,65 +414,65 @@
       }
 
       .certs {
-        margin-top: 22px;
+        margin-top: 18px;
         color: var(--muted);
       }
 
       .contact {
         margin-top: 72px;
-        padding: 42px 0 56px;
-        border-top: 2px solid var(--ink);
+        border-top: 1px solid var(--line);
+        padding: 32px 0 50px;
       }
 
       .contact-box {
         display: flex;
-        flex-wrap: wrap;
-        justify-content: space-between;
-        gap: 20px;
         align-items: center;
+        justify-content: space-between;
+        gap: 18px;
+        flex-wrap: wrap;
+      }
+
+      .contact-box h2 {
+        margin-bottom: 10px;
       }
 
       .contact-box p {
         margin: 0;
-        max-width: 34rem;
+        max-width: 36rem;
         color: var(--muted);
       }
 
       footer {
         padding-bottom: 28px;
         color: var(--muted);
-        font-size: 0.92rem;
+        font-size: 0.9rem;
       }
 
-      @media (max-width: 820px) {
+      @media (max-width: 900px) {
         .hero,
-        .approach-grid,
-        .work-grid,
-        .tools {
+        .principles,
+        .feature-grid,
+        .stack-grid {
           grid-template-columns: 1fr;
         }
 
         .stats {
-          grid-template-columns: repeat(2, minmax(140px, 1fr));
-        }
-
-        .nav-links {
-          gap: 10px 16px;
-          font-size: 0.9rem;
+          grid-template-columns: repeat(2, minmax(120px, 1fr));
         }
       }
 
       @media (max-width: 560px) {
-        nav {
+        .topbar {
           flex-direction: column;
           align-items: flex-start;
         }
 
-        .stats {
-          grid-template-columns: 1fr;
+        .nav {
+          flex-wrap: wrap;
+          gap: 10px 18px;
         }
 
-        .button-row {
+        .cta-row {
           flex-direction: column;
           align-items: stretch;
         }
@@ -458,109 +480,103 @@
         .btn {
           width: 100%;
         }
+
+        .stats {
+          grid-template-columns: 1fr;
+        }
       }
     </style>
   </head>
   <body>
     <div class="container">
-      <nav aria-label="Main navigation">
+      <div class="topbar">
         <div class="brand">Hiren Patel</div>
-        <div class="nav-links">
+        <nav class="nav" aria-label="Main navigation">
           <a href="#approach">Approach</a>
           <a href="#work">Work</a>
           <a href="#career">Career</a>
           <a href="#stack">Stack</a>
           <a href="#contact">Contact</a>
-        </div>
-      </nav>
+        </nav>
+      </div>
 
       <header class="hero">
         <div>
           <div class="eyebrow">Principal BI &amp; Analytics Architect</div>
-          <h1>I own everything that makes BI trustworthy.</h1>
+          <h1>I build the systems that make data trustworthy.</h1>
           <p class="lead">
-            I design the semantic layers, governance, and data foundations enterprises run on,
-            and now the AI tools that sit on top of them.
+            I design the semantic layers, governance, and AI-ready foundations enterprises depend on when
+            decisions have to hold up under pressure.
           </p>
-          <div class="button-row">
-            <a class="btn primary" href="#contact">Get in touch</a>
+          <div class="cta-row">
+            <a class="btn primary" href="#contact">Book a conversation</a>
             <a class="btn secondary" href="https://www.linkedin.com/in/hiren-patell" target="_blank" rel="noopener">LinkedIn</a>
           </div>
         </div>
 
-        <div class="portrait" aria-label="Profile portrait illustration">
-          <div class="portrait-card">
-            <div class="image" aria-hidden="true"></div>
-            <div class="profile-badge">
-              <strong>BI architecture</strong>
-              <span>Semantic layers · governance · AI analytics</span>
+        <div class="portrait-wrap" aria-label="Portrait illustration">
+          <div class="photo-frame" aria-hidden="true"></div>
+          <div class="portrait-label">
+            <div>
+              <strong>Focus</strong>
+              <span>BI architecture</span>
             </div>
           </div>
         </div>
       </header>
 
-      <div class="stats" aria-label="Key career statistics">
+      <div class="stats" aria-label="Key highlights">
         <div class="stat">
           <strong>15+</strong>
-          <span>years in BI, still hands-on</span>
+          <span>years in BI</span>
         </div>
         <div class="stat">
           <strong>400+</strong>
-          <span>dashboards and reports built</span>
+          <span>dashboards</span>
         </div>
         <div class="stat">
           <strong>2,000+</strong>
-          <span>business users served</span>
+          <span>users served</span>
         </div>
         <div class="stat">
           <strong>$700K+</strong>
-          <span>annual cost saved</span>
+          <span>annual savings</span>
         </div>
       </div>
 
       <section id="approach">
         <div class="section-head">
-          <h2>One thread, not four resumes</h2>
-          <p class="subhead">
-            Every company I’ve worked at needed BI to be trusted. I built dashboards, which needed
-            clean semantic models, which needed governed data underneath. That same foundation is what
-            makes AI and self-service analytics useful.
+          <h2>One disciplined layer at a time.</h2>
+          <p>
+            My work sits at the intersection of strategy, architecture, and execution — turning business complexity into trusted reporting and analytics systems.
           </p>
         </div>
 
-        <div class="approach-grid">
-          <div class="stack-list" role="list" aria-label="Architecture stack">
-            <div class="stack-item ai" role="listitem">
+        <div class="principles">
+          <div class="stack-list" role="list" aria-label="Core capabilities">
+            <div class="stack-item" role="listitem">
               <strong>AI and natural-language analytics</strong>
               <small>Claude, ThoughtSpot Spotter, Databricks Genie</small>
             </div>
             <div class="stack-item" role="listitem">
-              <strong>Dashboards and self-service</strong>
-              <small>Power BI, Tableau, Paginated Reports</small>
-            </div>
-            <div class="stack-item" role="listitem">
-              <strong>Semantic layer</strong>
-              <small>One governed set of metric definitions</small>
-            </div>
-            <div class="stack-item" role="listitem">
-              <strong>Transformation models</strong>
-              <small>dbt, Snowflake, Azure Databricks</small>
+              <strong>Semantic model design</strong>
+              <small>Metric consistency, real-world business logic</small>
             </div>
             <div class="stack-item" role="listitem">
               <strong>Governance and security</strong>
-              <small>PII classification, masking, RBAC, RLS</small>
+              <small>PII handling, masking, RBAC, row-level security</small>
             </div>
           </div>
 
-          <div class="approach-copy">
+          <div class="principles-copy">
             <p>
-              I get brought in during moments of change: an acquisition, a platform migration, or a team
-              that needs structure. I set the semantic and governance layer first so self-service and AI
-              tools return credible answers instead of noise.
+              I get called in during moments of change: acquisitions, platform migrations, reporting sprawl, or teams needing a stronger foundation.
             </p>
             <p>
-              I started as a SQL Server developer writing stored procedures and ETL. I still write DAX and SQL,
-              build semantic models, and work through architecture decisions with engineers directly.
+              I establish the semantic layer and governance model first so self-service and AI can produce decisions people actually trust.
+            </p>
+            <p>
+              I still work hands-on with SQL, DAX, transformation logic, and architecture decisions — bridging strategy with delivery.
             </p>
           </div>
         </div>
@@ -568,124 +584,74 @@
 
       <section id="work">
         <div class="section-head">
-          <h2>Project stories</h2>
-          <p class="subhead">A few examples of the problems I solve when data needs to be trusted.</p>
+          <h2>Selected outcomes.</h2>
+          <p>Where the work translates into impact.</p>
         </div>
 
-        <div class="work-grid">
-          <article class="case">
-            <div class="case-header">
-              <div class="metric">40% <small>faster</small></div>
-              <div>
-                <h3>AI-assisted semantic modeling</h3>
-              </div>
-            </div>
-            <p>
-              Built trusted semantic models that paired AI-generated logic with governance guardrails,
-              increasing analyst productivity while reducing metric drift.
-            </p>
+        <div class="feature-grid">
+          <article class="feature">
+            <span class="n">01</span>
+            <h3>AI-assisted semantic modeling</h3>
+            <p>Improved productivity and reduced metric drift with governance-aware AI workflows.</p>
           </article>
 
-          <article class="case">
-            <div class="case-header">
-              <div class="metric">2,000+ <small>users</small></div>
-              <div>
-                <h3>Self-service analytics governance</h3>
-              </div>
-            </div>
-            <p>
-              Designed reusable reporting foundations, role-based access, and curated metric definitions for
-              a large user base across business teams.
-            </p>
+          <article class="feature">
+            <span class="n">02</span>
+            <h3>Data platform modernization</h3>
+            <p>Moved reporting workloads into cleaner, more resilient, governed architecture.</p>
           </article>
 
-          <article class="case">
-            <div class="case-header">
-              <div class="metric">30M+ <small>rows/mo</small></div>
-              <div>
-                <h3>Platform modernization</h3>
-              </div>
-            </div>
-            <p>
-              Migrated legacy reporting workloads to a modern governed stack, improving reliability,
-              transparency, and delivery speed without sacrificing business context.
-            </p>
-          </article>
-
-          <article class="case">
-            <div class="case-header">
-              <div class="metric">$700K+ <small>saved</small></div>
-              <div>
-                <h3>Cost and operational efficiency</h3>
-              </div>
-            </div>
-            <p>
-              Consolidated overlapping analytics efforts and removed duplication in reporting logic while
-              preserving stakeholder trust in the KPI layer.
-            </p>
+          <article class="feature">
+            <span class="n">03</span>
+            <h3>Operational efficiency</h3>
+            <p>Consolidated fragmented reporting and protected trust across leadership KPIs.</p>
           </article>
         </div>
       </section>
 
       <section id="career">
         <div class="section-head">
-          <h2>Career</h2>
-          <p class="subhead">From SQL developer to architect and technical leader, always between strategy and building.</p>
+          <h2>Career.</h2>
+          <p>From SQL developer to enterprise BI architect.</p>
         </div>
 
         <div class="timeline" aria-label="Career timeline">
           <div class="job">
             <h3>Senior Manager, Data and BI · Technical Architecture Lead</h3>
-            <div class="when">Mode Global · May 2025 to present · Transportation, supply chain and 3PL</div>
-            <p>Driving architecture for BI foundations, governance, and AI-enabled analytics in a dynamic enterprise environment.</p>
+            <div class="when">Mode Global · 2025 to present</div>
+            <p>Shaping BI architecture and AI-enabled analytics in a high-velocity enterprise environment.</p>
           </div>
 
           <div class="job">
             <h3>Manager, Analytics and Insights · Technical / Platform Lead</h3>
-            <div class="when">Neiman Marcus Group · 2022 to 2025 · Luxury retail</div>
-            <p>Built and governed the enterprise semantic layer, aligning data, dashboards, and self-service analytics around trusted business metrics.</p>
+            <div class="when">Neiman Marcus Group · 2022 to 2025</div>
+            <p>Built the enterprise semantic layer and aligned self-service analytics around trusted metrics.</p>
           </div>
 
           <div class="job">
             <h3>Lead Analytics Engineer</h3>
-            <div class="when">Optimum · 2019 to 2022 · Telecom</div>
-            <p>Created semantic models in a BigQuery gold layer powering 17+ dashboards and enabling decision support across the organization.</p>
+            <div class="when">Optimum · 2019 to 2022</div>
+            <p>Created governed semantic models powering analytics across a telecom operating environment.</p>
           </div>
 
           <div class="job">
             <h3>Data &amp; Analytics Lead · BI Platform Lead</h3>
-            <div class="when">City of New York · 2015 to 2019 · Government</div>
-            <p>Built SQL Server pipelines and BI platforms that processed 30M+ monthly records and supported critical operational reporting.</p>
-          </div>
-
-          <div class="job">
-            <h3>Senior Business Intelligence Engineer</h3>
-            <div class="when">JPMorgan Chase · 2013 to 2015 · Financial services</div>
-            <p>Built the Asset Management team’s first BI portal and created reporting architecture designed for stakeholder trust and scale.</p>
-          </div>
-
-          <div class="job">
-            <h3>SQL Server Developer</h3>
-            <div class="when">Sun Pharma · 2009 to 2013 · Pharma</div>
-            <p>Developed stored procedures, views, and SSIS packages behind ERP and quality control reporting in a regulated environment.</p>
+            <div class="when">City of New York · 2015 to 2019</div>
+            <p>Delivered SQL Server-driven pipelines and reporting foundations for large-scale public-sector data.</p>
           </div>
         </div>
       </section>
 
       <section id="stack">
         <div class="section-head">
-          <h2>Toolbox</h2>
-          <p class="subhead">The center of gravity is BI architecture and semantic modeling. I go as deep down the stack as the problem requires.</p>
+          <h2>Toolbox.</h2>
+          <p>Architecture, analytics, governance, and delivery.</p>
         </div>
 
-        <div class="tools" aria-label="Technology stack">
+        <div class="stack-grid" aria-label="Technology stack">
           <div class="tool">
             <strong>BI and semantic models</strong>
-            <span>Power BI (DAX, Paginated Reports), Tableau, ThoughtSpot, SSRS, MicroStrategy, Qlik</span>
-          </div>
-          <div class="tool">
-            <strong>AI and agentic BI</strong>
-            <span>Claude, Power BI MCP, Databricks Genie, Snowflake Cortex, Spotter</span>
+            <span>Power BI, Tableau, SSRS, ThoughtSpot, Qlik, MicroStrategy</span>
           </div>
           <div class="tool">
             <strong>Data platforms</strong>
@@ -693,41 +659,43 @@
           </div>
           <div class="tool">
             <strong>Transformation</strong>
-            <span>dbt, advanced SQL, Kimball dimensional modeling, Alteryx, SSIS</span>
+            <span>dbt, advanced SQL, dimensional modeling, Alteryx, SSIS</span>
           </div>
           <div class="tool">
             <strong>Governance</strong>
-            <span>PII classification and masking, RBAC, row-level security, audit logging</span>
+            <span>PII classification, masking, RBAC, RLS, audit controls</span>
+          </div>
+          <div class="tool">
+            <strong>AI</strong>
+            <span>Claude, Power BI MCP, Databricks Genie, Snowflake Cortex, Spotter</span>
           </div>
           <div class="tool">
             <strong>Leadership</strong>
-            <span>Architecture standards, peer review, roadmaps, onsite and offshore teams</span>
+            <span>Architecture standards, peer review, roadmap ownership, delivery governance</span>
           </div>
         </div>
 
         <p class="certs">
-          Certifications: Tableau Data Scientist, Tableau Developer, MCSA SQL Server 2012/2014, Data Expert,
-          Analyst Studio. B.E. Computer Engineering, Veer Narmad South Gujarat University.
+          Tableau Data Scientist, Tableau Developer, MCSA SQL Server, Data Expert, Analyst Studio.
         </p>
       </section>
 
       <div class="contact" id="contact">
         <div class="contact-box">
           <div>
-            <h2>Let’s talk</h2>
+            <h2>Let’s talk.</h2>
             <p>
-              Hiring for BI architecture, semantic layers, platform modernization, or AI-ready analytics?
-              I’m happy to go deeper on the AI work, the migrations, or the governance.
+              Hiring for BI architecture, semantic layers, experience design, or AI-ready analytics foundations?
             </p>
           </div>
-          <div class="button-row">
+          <div class="cta-row">
             <a class="btn primary" href="mailto:hirenpaatel@gmail.com">Email me</a>
-            <a class="btn secondary" href="https://www.linkedin.com/in/hiren-patell" target="_blank" rel="noopener">Connect on LinkedIn</a>
+            <a class="btn secondary" href="https://www.linkedin.com/in/hiren-patell" target="_blank" rel="noopener">Connect</a>
           </div>
         </div>
       </div>
 
-      <footer>© Hiren Patel · Greater Philadelphia</footer>
+      <footer>© 2026 Hiren Patel · Greater Philadelphia</footer>
     </div>
   </body>
 </html>
